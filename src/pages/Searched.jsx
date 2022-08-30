@@ -8,7 +8,7 @@ function Searched() {
     let params = useParams();
 
     const getSearched = async (name) => {
-        const data = await fetch(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${process.env.REACT_APP_API_KEY}&query=${name}`);
+        const data = await fetch(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${process.env.REACT_APP_API_KEY}&query=${name}&number=50`);
         const recipes = await data.json();
         setSearchedRecipes(recipes.results);
     };
@@ -18,7 +18,7 @@ function Searched() {
     }, [params.search])
 
   return (
-    <grid>
+    <Grid>
         {searchedRecipes.map((item) => {
             return(
                 <Card key={item.id}>
@@ -27,19 +27,19 @@ function Searched() {
                 </Card>
             )
         })}
-    </grid>
+    </Grid>
   )
 }
 
 const Grid = styled.div`
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
-    grid-gap: 3;
+    grid-gap: 3rem;
 `
 
 const Card = styled.div`
     img {
-        width: 50%;
+        width: 100%;
         border-radius: 3rem;
     }
 
