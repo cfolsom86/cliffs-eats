@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 function Searched() {
 
@@ -39,7 +39,7 @@ const Grid = styled.div`
 
 const Card = styled.div`
     img {
-        width: 100%;
+        width: 50%;
         border-radius: 3rem;
     }
 
