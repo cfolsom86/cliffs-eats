@@ -1,5 +1,4 @@
 import React, {useEffect, useState} from 'react'
-import { act } from 'react-dom/test-utils';
 import { useParams } from 'react-router-dom'
 import styled from 'styled-components'
 
@@ -28,6 +27,7 @@ function Recipe() {
       <Info>
         <Button className={activeTab === 'ingredients' ? 'active' : ''} onClick={() => setActiveTab('ingredients')}>Ingredients</Button>
         <Button className={activeTab === 'instructions' ? 'active' : ''} onClick={() => setActiveTab('instructions')}>Instructions</Button>
+        
         {activeTab === 'ingredients' && (
           <ul>
           {details.extendedIngredients.map((ingredient) => 
