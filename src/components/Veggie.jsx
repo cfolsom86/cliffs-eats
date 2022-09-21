@@ -40,6 +40,7 @@ function Veggie() {
                     pagination: false,
                     drag: "free",
                     gap: '5rem',
+                    addRecipeInformation: true,
                 }}>
                 {veggie.map((recipe) => {
                     return(
