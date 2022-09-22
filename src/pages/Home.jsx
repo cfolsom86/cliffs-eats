@@ -1,4 +1,4 @@
-import Veggie from '../components/Veggie'
+import Veggie from '../components/Veggie.jsx'
 import Popular from '../components/Popular'
 import React from 'react'
 import { motion } from 'framer-motion'
@@ -6,9 +6,10 @@ import { motion } from 'framer-motion'
 function home() {
   return (
     <motion.div
-    animate={{opacity: 1}} initial={{opacity: 0}} exit={{opacity: 0}} transition={{ duration: 2}}>
-      <Popular />
+    animate={{opacity: 1}} initial={{opacity: 0}} exit={{opacity: 0}} transition={{ duration: 4}}>
       <Veggie />
+      <Popular />
+      
     </motion.div>
   );
 }

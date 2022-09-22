@@ -20,7 +20,7 @@ function Veggie() {
         if (check){
             setVeggie(JSON.parse(check));
         } else {
-            const api = await fetch(`https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_API_KEY}&number=20&tags=vegetarian`);
+            const api = await fetch(`https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes?apiKey=${process.env.REACT_APP_API_KEY}&number=20&tags=vegetarian`);
             const data = await api.json();
 
             localStorage.setItem('veggie', JSON.stringify(data.recipes));
@@ -35,7 +35,7 @@ function Veggie() {
                 <h3>Popular Vegetarian Recipes</h3>
                 
                 <Splide options={{
-                    perPage: 4,
+                    perPage: 3,
                     arrows: false,
                     pagination: false,
                     drag: "free",
@@ -49,8 +49,8 @@ function Veggie() {
                                 <Link to={"/recipe/" + recipe.id} >
                                     <p>{recipe.title}</p>
                                     <img src={recipe.image} alt={recipe.title} />
-                                </Link>
                                 <Gradient />
+                                </Link>
                             </Card>
                         </SplideSlide>
                     );

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/splide/dist/css/splide.min.css';
@@ -19,7 +19,7 @@ function Popular() {
         if (check){
             setPopular(JSON.parse(check));
         } else {
-            const api = await fetch(`https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_API_KEY}&number=20&tags=popular`);
+            const api = await fetch(`https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes?apiKey=${process.env.REACT_APP_API_KEY}&number=20&tags=popular`);
             const data = await api.json();
 
             localStorage.setItem('popular', JSON.stringify(data.recipes));
@@ -46,8 +46,8 @@ function Popular() {
                         <SplideSlide key={recipe.id}>
                             <Card>
                                 <Link to={"/recipe/" + recipe.id}>
-                                <p>{recipe.title}</p>
-                                <img src={recipe.image} alt={recipe.title} />
+                                    <p>{recipe.title}</p>
+                                    <img src={recipe.image} alt={recipe.title} />
                                 <Gradient />
                                 </Link>
                             </Card>
