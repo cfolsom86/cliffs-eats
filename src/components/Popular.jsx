@@ -2,34 +2,35 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/splide/dist/css/splide.min.css';
+import { Link } from 'react-router-dom'
 
 
 
 function Popular() {
 
-    const [popular, setPopular] = useState([])
+    const [popular, setPopular] = useState([]);
 
-    useEffect(() => {
-        getPopular();
-    },[])
+        useEffect(() => {
+            getPopular();
+        },[]);
  
     const getPopular = async () => {
 
-        const check = localStorage.getItem('popular')
+        const check = localStorage.getItem('popular');
 
-        if (check) {
-            setPopular(JSON.parse(check))
+        if (check){
+            setPopular(JSON.parse(check));
         } else {
             const api = await fetch(`https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_API_KEY}&number=20&tags=popular`);
 
             const data = await api.json();
 
-            localStorage.setItem('popular', JSON.stringify(data.recipes))
+            localStorage.setItem('popular', JSON.stringify(data.recipes));
 
-            setPopular(data.recipes)
-            console.log(data.recipes)
+            setPopular(data.recipes);
+            console.log(data.recipes);
         }
-    }
+    };
 
     return (
     
@@ -51,11 +52,14 @@ function Popular() {
                         return(
                             <SplideSlide key={recipe.id}>
                                 <Card>
-                                    <p>{recipe.title}</p>
-                                    <img src={recipe.image} alt={recipe.title} />
+                                    <Link to={"/recipe/" + recipe.id} >
+                                        <p>{recipe.title}</p>
+                                        <img src={recipe.image} alt={recipe.title} />
+                                    <Gradient />
+                                    </Link>
                                 </Card>
-                            </SplideSlide>     
-                        )
+                            </SplideSlide>
+                        );
                     })}
                     </Splide>
                 </Wrapper>
@@ -99,6 +103,14 @@ const Card = styled.div`
         justify-content: center;
         align-items: center;
     }
+`
+
+const Gradient = styled.div `
+    z-index: 3;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 12));
 `
 
 
