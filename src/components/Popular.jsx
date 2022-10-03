@@ -9,28 +9,28 @@ import { Link } from 'react-router-dom'
 function Popular() {
 
     const [popular, setPopular] = useState([]);
-
-        useEffect(() => {
-            getPopular();
-        },[]);
- 
-    const getPopular = async () => {
-
-        const check = localStorage.getItem('popular');
-
-        if (check){
-            setPopular(JSON.parse(check));
-        } else {
-            const api = await fetch(`https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_API_KEY}&number=20&tags=popular`);
-
-            const data = await api.json();
-
-            localStorage.setItem('popular', JSON.stringify(data.recipes));
-
-            setPopular(data.recipes);
-            console.log(data.recipes);
-        }
-    };
+  
+      useEffect(() => {
+          getPopular();
+      },[]);
+  
+      const getPopular = async () => {
+  
+          const check = localStorage.getItem('random');
+  
+          if (check){
+              setPopular(JSON.parse(check));
+          } else {
+              const api = await fetch(`https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_API_KEY}&number=20&tags=vegetarian`);
+  
+              const data = await api.json();
+  
+              localStorage.setItem('popular', JSON.stringify(data.recipes));
+  
+              setPopular(data.recipes);
+              console.log(data.recipes);
+           } 
+      };
 
     return (
     
@@ -92,7 +92,7 @@ const Card = styled.div`
         bottom: 0%;
         transform: translate(-50%, 0%);
         color: black;
-        background: #f4f4f4;
+        background: #CAE9F5;
         width: 70%;
         border-radius: 25px;
         text-align: center;

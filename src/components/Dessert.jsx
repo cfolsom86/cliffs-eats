@@ -6,28 +6,28 @@ import { Link } from 'react-router-dom'
 
 
 
-function Veggie() {
+function Dessert() {
 
-  const [veggie, setVeggie] = useState([]);
+  const [dessert, setDessert] = useState([]);
 
     useEffect(() => {
-        getVeggie();
+        getDessert();
     },[]);
 
-    const getVeggie = async () => {
+    const getDessert = async () => {
 
-        const check = localStorage.getItem('veggie');
+        const check = localStorage.getItem('dessert');
 
         if (check){
-            setVeggie(JSON.parse(check));
+            setDessert(JSON.parse(check));
         } else {
-            const api = await fetch(`https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_API_KEY}&number=20&tags=vegetarian`);
+            const api = await fetch(`https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_API_KEY}&number=20&tags=dessert`);
 
             const data = await api.json();
 
-            localStorage.setItem('veggie', JSON.stringify(data.recipes));
+            localStorage.setItem('dessert', JSON.stringify(data.recipes));
 
-            setVeggie(data.recipes);
+            setDessert(data.recipes);
             console.log(data.recipes);
          } 
     };
@@ -36,7 +36,7 @@ function Veggie() {
     
     <div>
             <Wrapper>
-                <h3>Popular Vegetarian Recipes</h3>
+                <h3>Popular Desserts</h3>
                 
                 <Splide options={{
                     perPage: 3,
@@ -48,7 +48,7 @@ function Veggie() {
                 }}>
 
 
-                {veggie.map((recipe) => {
+                {dessert.map((recipe) => {
                     return(
                         <SplideSlide key={recipe.id}>
                             <Card>
@@ -116,4 +116,4 @@ const Gradient = styled.div `
 `
   
 
-export default Veggie
+export default Dessert

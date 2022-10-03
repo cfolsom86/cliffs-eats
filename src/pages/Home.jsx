@@ -1,5 +1,6 @@
 import Veggie from '../components/Veggie.jsx'
-import Popular from '../components/Popular'
+import Popular from '../components/Popular.jsx'
+import Dessert from '../components/Dessert.jsx'
 import React from 'react'
 import { motion } from 'framer-motion'
 
@@ -10,6 +11,7 @@ function home() {
       
       <Popular />
       <Veggie />
+      <Dessert />
       
     </motion.div>
   );
