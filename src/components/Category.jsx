@@ -1,14 +1,14 @@
-import { FaPizzaSlice } from 'react-icons/fa';
-import { GiNoodles, GiBread, GiChopsticks, GiChickenLeg } from 'react-icons/gi';
-import styled from 'styled-components';
-import { NavLink } from 'react-router-dom';
+//import { FaPizzaSlice } from 'react-icons/fa';
+//import { GiNoodles, GiBread, GiChopsticks, GiChickenLeg } from 'react-icons/gi';
+//import styled from 'styled-components';
+//import { NavLink } from 'react-router-dom';
 
 
-import React from 'react'
+//import React from 'react'
  
-function Category() {
-  return (
-    {/*
+//function Category() {
+//  return (
+    /*
     <List>
         <SLink to={'/cuisine/Italian'}>
             <FaPizzaSlice />
@@ -34,11 +34,11 @@ function Category() {
             <GiNoodles />
             <h4>Vietnamese</h4>
         </SLink> 
-</List> */}
-  )
-}
+</List> */
+//  )
+//}
 
-const List = styled.div`
+/*const List = styled.div`
     display: flex;
     justify-content: center;
     margin: 2rem 0rem;
@@ -79,6 +79,6 @@ const SLink = styled(NavLink)`
             color: white;
         }
     }
-`
+`*/
 
-export default Category
+//export default Category

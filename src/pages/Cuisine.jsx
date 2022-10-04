@@ -10,7 +10,7 @@ function Cuisine() {
     let params = useParams();
 
     const getCuisine = async (name) => {
-        const data = await fetch(`https://api.spoonacular.com/recipes?apiKey=${process.env.REACT_APP_API_KEY}&cuisine=${name}&number=100`);
+        const data = await fetch(`https://api.spoonacular.com/recipes?apiKey=${process.env.REACT_APP_API_KEY}&cuisine=${name}&number=50`);
         const recipes = await data.json();
         setCuisine(recipes.results);
     };

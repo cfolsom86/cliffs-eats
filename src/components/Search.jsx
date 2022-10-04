@@ -30,7 +30,7 @@ const FormStyle = styled.form`
     div {
         width: 100%;
         position: relative;
-        top: 1.5rem;
+        top: -2rem;
 
     }
     input{
