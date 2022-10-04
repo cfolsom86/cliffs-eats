@@ -5,11 +5,12 @@ import { NavLink } from 'react-router-dom';
 
 
 import React from 'react'
-
+ 
 function Category() {
   return (
+    {/*
     <List>
-        {/*<SLink to={'/cuisine/Italian'}>
+        <SLink to={'/cuisine/Italian'}>
             <FaPizzaSlice />
             <h4>Italian</h4>
         </SLink>
@@ -32,8 +33,8 @@ function Category() {
         <SLink to={'/cuisine/Vietnamese'}>
             <GiNoodles />
             <h4>Vietnamese</h4>
-  </SLink> */}
-    </List>
+        </SLink> 
+</List> */}
   )
 }
 

@@ -3,6 +3,7 @@ import Popular from '../components/Popular.jsx'
 import Dessert from '../components/Dessert.jsx'
 import React from 'react'
 import { motion } from 'framer-motion'
+import '../index.css'
 
 function home() {
   return (

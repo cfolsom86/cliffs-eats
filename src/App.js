@@ -16,7 +16,7 @@ function App() {
         <Logo to={"/"}>Cliff's Eats</Logo>
       </Nav>
       <Search />
-      <Category />
+      {/*<Category />*/}
       <Pages />
       </BrowserRouter>
     </div>
