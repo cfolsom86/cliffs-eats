@@ -16,12 +16,12 @@ function Popular() {
   
       const getPopular = async () => {
   
-          const check = localStorage.getItem('random');
+          const check = localStorage.getItem("random");
   
           if (check){
               setPopular(JSON.parse(check));
           } else {
-              const api = await fetch(`https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_API_KEY}&number=200&tags=vegetarian`);
+              const api = await fetch(`https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_API_KEY}&number=100`);
   
               const data = await api.json();
   

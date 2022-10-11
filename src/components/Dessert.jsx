@@ -16,7 +16,7 @@ function Dessert() {
 
     const getDessert = async () => {
 
-        const check = localStorage.getItem('dessert');
+        const check = localStorage.getItem("dessert");
 
         if (check){
             setDessert(JSON.parse(check));
