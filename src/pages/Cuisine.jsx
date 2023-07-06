@@ -43,6 +43,7 @@ const Grid = styled(motion.div)`
     grid-gap: 3;
 `
 
+
 const Card = styled.div`
     img {
         width: 100%;

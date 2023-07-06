@@ -69,6 +69,11 @@ function Dessert() {
 
 const Wrapper = styled.div`
     margin: 4rem 0rem;
+
+    @media screen and (min-width 340px) {
+        display: clear;
+        grid-template-rows: fit content;    
+    }
 `
 
 const Card = styled.div`
@@ -114,6 +119,6 @@ const Gradient = styled.div `
     height: 100%;
     background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 12));
 `
-  
+
 
 export default Dessert
