@@ -45,6 +45,19 @@ function Dessert() {
                     drag: "false",
                     gap: '5rem',
                     addRecipeInformation: true,
+                    breakpoints: {
+                        1024: {
+                          perPage: 3,
+                         
+                        },
+                        767: {
+                          perPage: 2,
+                      
+                        },
+                        640: {
+                          perPage: 1,
+                    
+                        },}
                 }}>
 
 
